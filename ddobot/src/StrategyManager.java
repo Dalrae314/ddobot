@@ -108,13 +108,39 @@ public class StrategyManager {
 
 	public void setInitialBuildOrder() {
 		if (MyBotModule.Broodwar.self().getRace() == Race.Protoss) {
+			/* queueAsHighestPriority : 빨리
+			 * queueAsLowestPriority : 나중 우선순위
+			 */
+			
+			/* UnitType
+			 * Worker : 일꾼
+			 * Pylon getBasicSupplyProviderUnitType
+			
+			 * * Protoss_Photon_Cannon : 폭탄 (지상, 공중유닛 공격 가능 , 은폐한 유닛 탐지가능)
+			 * 
+			 *  * UnitType.Protoss_Citadel_of_Adun : 학습센터 : 능력 업그레이드 기계
+			 * Protoss_Gateway : 기본 공격 유닛 뽑는 기계 - 질럿, 
+			 * UnitType.Protoss_Assimilato : 가스 뽑는 기계
+			 * Protoss_Forge : 무기 발달시킬 수 잇는 기계	
+			 * 
+			 * Protoss_Cybernetics_Core : 드라군을 생산하기 위한 재료를 보관하는 보조건물
+			 * UnitType.Protoss_Shield_Battery : 실드를 충전할 수 잇는 건물. 회복
+			 * Protoss_Templar_Archives : 기술 배울 수 있는 건물. 
+			 
+			 * 	업그레이드
+			 * UpgradeType.Singularity_Charge : 드라군의 6, 11, 18마다 사거리를 증가시킴	
+			 * UpgradeType.Leg_Enhancements : 이동속도 증가
+*/
+			   
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);			
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(
 					InformationManager.Instance().getBasicSupplyProviderUnitType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
+			
+			
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway,
@@ -125,8 +151,10 @@ public class StrategyManager {
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-
-			/*
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(
+					InformationManager.Instance().getBasicSupplyProviderUnitType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
+			
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Assimilator,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
 
@@ -142,6 +170,10 @@ public class StrategyManager {
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Cybernetics_Core,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dragoon);
+			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(
+					InformationManager.Instance().getBasicSupplyProviderUnitType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
 			// 드라군 사정거리 업그레이드
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Singularity_Charge);
 
@@ -190,7 +222,7 @@ public class StrategyManager {
 			// 공중유닛
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Stargate);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Fleet_Beacon);
-
+/*
 			// 스카우트
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Scout);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Apial_Sensors);
