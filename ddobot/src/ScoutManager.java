@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import bwapi.Color;
 import bwapi.Position;
+import bwapi.Race;
 import bwapi.TilePosition;
 import bwapi.Unit;
 import bwta.BWTA;
@@ -54,11 +55,14 @@ public class ScoutManager {
 	public void assignScoutIfNeeded()
 	{
 		BaseLocation enemyBaseLocation = InformationManager.Instance().getMainBaseLocation(MyBotModule.Broodwar.enemy());
-
-		if (enemyBaseLocation == null)
+    if (currentScoutUnit == null || currentScoutUnit.exists() == false || currentScoutUnit.getHitPoints() <= 0)
 		{
-			if (currentScoutUnit == null || currentScoutUnit.exists() == false || currentScoutUnit.getHitPoints() <= 0)
-			{
+		if (enemyBaseLocation == null
+				|| InformationManager.Instance().enemyRace == Race.Unknown  
+				|| InformationManager.Instance().getOccupiedBaseLocations(InformationManager.Instance().enemyPlayer).size() <= 0
+			)
+		{
+			
 				currentScoutUnit = null;
 				currentScoutStatus = ScoutStatus.NoScout.ordinal();
 

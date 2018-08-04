@@ -132,96 +132,154 @@ public class StrategyManager {
 			 * UpgradeType.Leg_Enhancements : 이동속도 증가
 */
 			   
+				/*일꾼4*/
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			
+			/*Pylon*/
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(
 					InformationManager.Instance().getBasicSupplyProviderUnitType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
-			
-			
+
+			/*일꾼1*/
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, false);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint, true);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint, true);			
+			/* Pylon */
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(
+					InformationManager.Instance().getBasicSupplyProviderUnitType(),
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint, true); 
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+
+		
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, false);
+			/* Pylon */
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(
+					InformationManager.Instance().getBasicSupplyProviderUnitType(),
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint, true); 
+			/*일꾼2*/
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint, true);		
+			
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			
+			/*질럿*/
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(
-					InformationManager.Instance().getBasicSupplyProviderUnitType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
-			
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Assimilator,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint, true);
 
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.SecondChokePoint, true);			
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Forge,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);	
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			
+			
+			/* Cannon */
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Photon_Cannon,
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+	
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot);
-
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Cybernetics_Core,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dragoon);
-			
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway,
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Photon_Cannon,
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
+					BuildOrderItem.SeedPositionStrategy.SecondChokePoint, true);		
+		
+				// 드라군 사정거리 업그레이드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Singularity_Charge);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(
 					InformationManager.Instance().getBasicSupplyProviderUnitType(),
 					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
-			// 드라군 사정거리 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Singularity_Charge);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dragoon);
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Citadel_of_Adun);
 			// 질럿 속도 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Leg_Enhancements);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Citadel_of_Adun);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(
+					InformationManager.Instance().getBasicSupplyProviderUnitType(),
+					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true); //Pylon
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Shield_Battery);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot);	
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Leg_Enhancements);
+		
+
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Photon_Cannon,
+					BuildOrderItem.SeedPositionStrategy.FirstChokePoint);
+	
+
 
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Templar_Archives);
-			// 하이템플러
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Psionic_Storm);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Hallucination);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Khaydarin_Amulet);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Archon);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Shield_Battery);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Ground_Weapons,false);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Plasma_Shields,false);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Ground_Armor,false);
+//			
+//			// 하이템플러
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dragoon);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Psionic_Storm);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Hallucination);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Khaydarin_Amulet);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Archon);
 
 			// 다크아칸
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Maelstrom);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Mind_Control);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Argus_Talisman);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Archon);
-
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Robotics_Facility);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Maelstrom);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Mind_Control);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Argus_Talisman);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Archon);
+//
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Robotics_Facility);
 
 			// 셔틀
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Shuttle);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Robotics_Support_Bay);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Drive);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Shuttle);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Robotics_Support_Bay);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Drive);
 
 			// 리버
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Reaver);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Scarab_Damage);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Reaver_Capacity);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Scarab);
-
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Observatory);
-			// 옵저버
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Observer);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Boosters);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Sensor_Array);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Reaver);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Scarab_Damage);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Reaver_Capacity);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Scarab);
+//
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Observatory);
+//			// 옵저버
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Observer);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Boosters);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Sensor_Array);
 
 			// 공중유닛
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Stargate);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Fleet_Beacon);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Stargate);
+//			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Fleet_Beacon);
 /*
 			// 스카우트
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Scout);
@@ -733,6 +791,18 @@ public class StrategyManager {
 							BuildManager.Instance().buildQueue.queueAsLowestPriority(
 									InformationManager.Instance().getBasicCombatUnitType(),
 									BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+						  BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dragoon);
+							if(unit.getID()%2 == 0 ) {
+							BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
+							BuildManager.Instance().buildQueue.queueAsLowestPriority(
+									UnitType.Protoss_Photon_Cannon,
+									BuildOrderItem.SeedPositionStrategy.FirstChokePoint);
+							}else{BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
+							BuildManager.Instance().buildQueue.queueAsLowestPriority(
+									UnitType.Protoss_Photon_Cannon,
+									BuildOrderItem.SeedPositionStrategy.SecondChokePoint);
+							}
+					
 						}
 					}
 				}
@@ -753,7 +823,7 @@ public class StrategyManager {
 			}
 
 			// 전투 유닛이 2개 이상 생산되었고, 적군 위치가 파악되었으면 총공격 모드로 전환
-			if (MyBotModule.Broodwar.self().completedUnitCount(InformationManager.Instance().getBasicCombatUnitType()) > 2) {
+			if (MyBotModule.Broodwar.self().completedUnitCount(InformationManager.Instance().getBasicCombatUnitType()) > 7) {
 				if (InformationManager.Instance().enemyPlayer != null
 					&& InformationManager.Instance().enemyRace != Race.Unknown  
 					&& InformationManager.Instance().getOccupiedBaseLocations(InformationManager.Instance().enemyPlayer).size() > 0) {				
